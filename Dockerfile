@@ -214,10 +214,6 @@ RUN cd /var/www/html/includes/Rest && \
     sed -i 's/public function detach() {/public function detach(): mixed {/' StringStream.php && \
     sed -i 's/public function getMetadata( \$key = null ) {/public function getMetadata( ?string \$key = null ): mixed {/' StringStream.php
 
-# Fix PHP 8.3 compatibility: MWCallbackStream
-RUN sed -i 's/public function write( \$string ) {/public function write( string \$string ): int {/' \
-    /var/www/html/includes/http/MWCallbackStream.php
-
 # Fetch favicon from ohc.network
 RUN curl -sL -o /var/www/html/favicon.ico https://ohc.network/favicon.ico
 
