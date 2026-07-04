@@ -17,7 +17,7 @@
 # Build:
 #   docker build -t ghcr.io/tellmey18/ohcnwiki:latest .
 
-FROM mediawiki:stable-fpm-alpine
+FROM mediawiki:1.45-fpm-alpine
 
 # Install dependencies + nginx + PHP Redis extension
 RUN apk add --no-cache git lua5.1 unzip curl nginx supervisor \
